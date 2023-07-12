@@ -1,11 +1,10 @@
-# my_list = [1, 3, 3, 5, 1, 6 ,9, 9, 9]
-def double_list(array: list[int]) -> list[int]:
-    res = set()
-    for el in array:
-        counter = array.count(el)
-        if counter > 1:
-            res.add(el)
-    return list(res)
+# Напишите функцию, которая принимает на вход строку — абсолютный путь до файла.my_list = [1, 3, 3, 5, 1, 6 ,9, 9, 9]
+# Функция возвращает кортеж из трёх элементов: путь, имя файла, расширение файла.
 
-
-print(double_list([1, 3, 3, 5, 1, 6 ,9, 9, 9]))
+def split_path(abs_path: str) -> tuple():
+    list_abs_path = abs_path.split('\\')
+    list_last_elem = list_abs_path[-1].split('.')
+    path = '\\'.join(list_abs_path[0:-1])
+    name = list_last_elem[0]
+    expansion = list_last_elem[1]
+    return path, name, expansion

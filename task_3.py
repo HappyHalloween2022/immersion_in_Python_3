@@ -1,13 +1,9 @@
-stuff = {'matches': 1, 'cup': 2, 'tent': 10, 'ration': 5, 'spare shoes': 3}
-
-def backpack_capacity(capacity: int, stuff: dict) -> list[str]:
-    packaging_option = []
-    summary = []
-    for key, value in stuff.items():
-        if value <= capacity:
-            capacity -= value
-            packaging_option.append(key)
-    return packaging_option
+#  Создайте функцию генератор чисел Фибоначчи (см. Википедию).
+def fib(n: int) -> list[int]:
+    a, b = 0, 1
+    for __ in range(n):
+        yield a
+        a, b = b, a + b
 
 
-print(backpack_capacity(15, stuff))
+print(*(fib(10)))
